@@ -1,49 +1,55 @@
 package colaapp;
 
 public class Cola {
-    NodoCola inicio,fin;
-    int tamanio;
+    NodoCola inicio;
+    NodoCola fin;
+    int dim;
 
     public Cola(){
         inicio=fin=null;
-        tamanio=0;
+        dim=0;
     }
     public boolean estaVacia(){
         return inicio==null;
     }
     public void insertar(int elemento){
-        NodoCola nuevo =new NodoCola(elemento);
-        if(estaVacia()){
-            inicio=nuevo;
-        }else{
-            fin.siguiente=nuevo;
-        }
-        fin=nuevo;
-        tamanio++;
+         NodoCola nuevo =new NodoCola(elemento); 
+         if(dim!=5){
+             if(estaVacia()){
+             inicio=nuevo;
+         }else{
+             fin.Siguiente=nuevo;
+         }
+         fin=nuevo;
+         dim++;   
+         } else 
+             if(dim==5){
+             System.out.println("Cola llena");
+         }
+         
+         
     }
     public int eliminar(){
-        int aux=inicio.dato;
-        inicio=inicio.siguiente;
-        tamanio--;
-        return aux;
+        int cont=inicio.Dato;
+        inicio=inicio.Siguiente;
+        dim--;
+        return cont;
     }
     
      public void mostrarCola() {
-        NodoCola R=inicio;
-        while (R != null) {
-            System.out.print("[" + R.dato + "]");
-            R = R.siguiente;
+        NodoCola Nc=inicio;
+        while (Nc != null) {
+            System.out.print("[" + Nc.Dato + "]");
+            Nc = Nc.Siguiente;
         }
         System.out.println("");
 
     }
-    
-    
-    
+
     public int inicioCola(){
-        return inicio.dato;
+        return inicio.Dato;
     }
     public int tamanioCola(){
-        return tamanio;
+        return dim;
     }
 }
