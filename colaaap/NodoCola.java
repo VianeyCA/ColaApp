@@ -1,12 +1,12 @@
 package colaapp;
 
 public class NodoCola {
-    int dato;
-    NodoCola siguiente;
+    int Dato;
+    NodoCola Siguiente;
     
-    NodoCola(int d){
-        dato=d;
-        siguiente=null;
+    NodoCola(int D){
+        Dato=D;
+        Siguiente=null;
     }
     
 }
