@@ -7,23 +7,25 @@ public class ColaApp {
      public static void main(String[] args) {
          // TODO code application logic here
          Cola obj=new Cola();
-         Scanner op = new Scanner(System.in);
+         int[] aux=new int[5];
+         Scanner leer = new Scanner(System.in);
          int opc;
          do{
-             System.out.println("*************Pilas*************");
+             System.out.println("*************Colas*************");
              System.out.println("1.- Insertar");
              System.out.println("2.- Eliminar");
              System.out.println("3.- Mostrar");
              System.out.println("7.- Salir");
              System.out.print("Ingrese una opción: ");
-             opc=op.nextInt();
+             opc=leer.nextInt();
              switch (opc){
                  case 1: 
                      int elemento;
                      System.out.print("Inserte un elemento:  ");
-                     elemento=op.nextInt();
+                     elemento=leer.nextInt();
                      obj.insertar(elemento);
                      System.out.println("");
+                     
                      break;
                  case 2:
                      if(!obj.estaVacia()){
